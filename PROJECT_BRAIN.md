@@ -300,10 +300,12 @@ Testing:
 
 backend/tests/test_pdf_report.py covers: service raisesValueError for missing repo, returns valid %PDF bytes, PDFcontent includes section labels, router returns 404 for missing repo,router returns 200 + application/pdf with correct headers for avalid repo.
 =======
+
 - fix: make the hotspot map and knowledge graph responsive on mobile devices (#377). Made the canvas container, treemap wrapper, sidebars, stats overlay, and playback controls fully responsive across narrow viewports without horizontal overflow.
 - docs: update project brain after mobile responsiveness fix (#377). Recorded responsive layout adjustments for HotspotMap and GraphExplorer, and updated test coverage.
 
 ### Mobile Responsiveness for Hotspot Map & Knowledge Graph (Issue #377)
+
 - **Problem**: On small mobile devices (viewports < 768px down to 320px), the Hotspot Treemap and ForceGraph2D canvas containers caused horizontal page overflow, unconstrained sidebar widths, and clipped overlay badges.
 - **Implementation**:
   - `HotspotMap.tsx`:
@@ -321,4 +323,5 @@ backend/tests/test_pdf_report.py covers: service raisesValueError for missing re
 - **Testing**:
   - Expanded `HotspotMap.test.tsx` with unit tests for empty states, risk badges, and pagination under responsive layouts.
   - Verified with full test suite (`npm run test`, 16 test files, 78 tests passing).
->>>>>>> origin/main
+
+> > > > > > > origin/main
