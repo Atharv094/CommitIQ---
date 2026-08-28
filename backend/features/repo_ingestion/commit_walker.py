@@ -216,7 +216,9 @@ def stream_commit_diff_stats(
     return files_changed, total_insertions, total_deletions, rename_map
 
 
-def _walk_commits_uncached(repo_path: Path, limit: int, exclude_merges: bool = False) -> Iterator[dict]:
+def _walk_commits_uncached(
+    repo_path: Path, limit: int, exclude_merges: bool = False
+) -> Iterator[dict]:
     """
     Walk last `limit` commits from shallow clone.
     Yields commit metadata dicts. Does NOT checkout each commit

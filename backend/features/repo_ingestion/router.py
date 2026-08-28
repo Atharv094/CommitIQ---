@@ -431,7 +431,11 @@ async def _latest_active_job(db: AsyncSession, repo_id: int) -> AnalysisJob | No
 
 
 async def run_ingestion(
-    repo_id: int, job_id: int, max_commits: int, branch: str | None = None, exclude_merges: bool = False
+    repo_id: int,
+    job_id: int,
+    max_commits: int,
+    branch: str | None = None,
+    exclude_merges: bool = False,
 ) -> None:
     from backend.database import AsyncSessionLocal
     from backend.features.repo_ingestion.metrics_extractor import (
