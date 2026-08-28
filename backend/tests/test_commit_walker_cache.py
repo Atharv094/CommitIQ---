@@ -195,7 +195,7 @@ def test_walk_commits_rewalks_when_cache_expired(tmp_path, monkeypatch):
         # Expire the cache by setting mtime to past TTL
         import hashlib
 
-        key_str = f"{(tmp_path / 'fake_repo').resolve()}:150"
+        key_str = f"{(tmp_path / 'fake_repo').resolve()}:150:False"
         key_hash = hashlib.sha256(key_str.encode()).hexdigest()[:16]
         cache_file = tmp_path / f"commits_{key_hash}.json"
         old_time = time.time() - (_CACHE_TTL_SECONDS + 3600)
